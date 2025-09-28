@@ -11,7 +11,7 @@ import {
 import { Moon, Sun, Monitor } from 'lucide-react';
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const {  setTheme } = useTheme();
 
   return (
     <DropdownMenu>

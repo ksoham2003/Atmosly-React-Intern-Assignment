@@ -27,3 +27,10 @@ export interface FilterState {
   successOnly: boolean;
   showFavorites: boolean;
 }
+
+export interface PaginationState {
+  currentPage: number;
+  itemsPerPage: number;
+  totalItems: number;
+  totalPages: number;
+}

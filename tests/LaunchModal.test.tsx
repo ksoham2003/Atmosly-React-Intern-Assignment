@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import LaunchModal from '@/components/LaunchModal';
 import { FavoritesProvider } from '@/context/FavoritesContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const mockLaunch = {
   id: '1',
@@ -20,6 +21,15 @@ const mockLaunch = {
   }
 };
 
+// Test wrapper
+const TestWrapper = ({ children }: { children: React.ReactNode }) => (
+  <ThemeProvider>
+    <FavoritesProvider>
+      {children}
+    </FavoritesProvider>
+  </ThemeProvider>
+);
+
 describe('LaunchModal', () => {
   const mockOnClose = jest.fn();
 
@@ -29,14 +39,14 @@ describe('LaunchModal', () => {
 
   it('renders launch details when open', () => {
     render(
-      <FavoritesProvider>
+      <TestWrapper>
         <LaunchModal
           launch={mockLaunch}
           rocketName="Falcon 9"
           isOpen={true}
           onClose={mockOnClose}
         />
-      </FavoritesProvider>
+      </TestWrapper>
     );
 
     expect(screen.getByText('Test Mission')).toBeInTheDocument();
@@ -47,14 +57,14 @@ describe('LaunchModal', () => {
 
   it('calls onClose when close button is clicked', () => {
     render(
-      <FavoritesProvider>
+      <TestWrapper>
         <LaunchModal
           launch={mockLaunch}
           rocketName="Falcon 9"
           isOpen={true}
           onClose={mockOnClose}
         />
-      </FavoritesProvider>
+      </TestWrapper>
     );
 
     const closeButton = screen.getByRole('button', { name: /close/i });
@@ -65,14 +75,14 @@ describe('LaunchModal', () => {
 
   it('does not render when isOpen is false', () => {
     render(
-      <FavoritesProvider>
+      <TestWrapper>
         <LaunchModal
           launch={mockLaunch}
           rocketName="Falcon 9"
           isOpen={false}
           onClose={mockOnClose}
         />
-      </FavoritesProvider>
+      </TestWrapper>
     );
 
     expect(screen.queryByText('Test Mission')).not.toBeInTheDocument();
@@ -80,14 +90,14 @@ describe('LaunchModal', () => {
 
   it('renders favorite button', () => {
     render(
-      <FavoritesProvider>
+      <TestWrapper>
         <LaunchModal
           launch={mockLaunch}
           rocketName="Falcon 9"
           isOpen={true}
           onClose={mockOnClose}
         />
-      </FavoritesProvider>
+      </TestWrapper>
     );
 
     expect(screen.getByRole('button', { name: /add to favorites/i })).toBeInTheDocument();

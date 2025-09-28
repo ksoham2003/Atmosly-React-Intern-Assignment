@@ -4,6 +4,7 @@ import { Launch } from '@/types/launch';
 import FavoriteButton from './FavoriteButton';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 interface LaunchCardProps {
   launch: Launch;
@@ -35,10 +36,12 @@ export default function LaunchCard({ launch, rocketName, onLaunchClick }: Launch
       <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
         <div className="flex items-center space-x-3">
           {launch.links.patch.small && (
-            <img 
+            <Image 
               src={launch.links.patch.small} 
               alt={`${launch.name} patch`}
               className="w-12 h-12 object-contain"
+              width={18}
+              height={18}
             />
           )}
           <div className="space-y-1">

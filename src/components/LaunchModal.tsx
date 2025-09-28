@@ -2,10 +2,11 @@
 
 import { Launch } from '@/types/launch';
 import FavoriteButton from './FavoriteButton';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, X } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 interface LaunchModalProps {
   launch: Launch | null;
@@ -34,21 +35,26 @@ export default function LaunchModal({ launch, rocketName, isOpen, onClose }: Lau
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto px-10">
         <DialogHeader>
           <DialogTitle className="flex items-center justify-between">
             <span>{launch.name}</span>
             <FavoriteButton launchId={launch.id} size="md" />
           </DialogTitle>
+          <DialogDescription>
+            Mission details for {launch.name}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="grid gap-6 sm:grid-cols-[auto_1fr]">
           <div className="flex-shrink-0">
             {launch.links.patch.large ? (
-              <img
+              <Image
                 src={launch.links.patch.large}
-                alt={`${launch.name} patch`}
+                alt={`${launch.name} mission patch`}
                 className="w-32 h-32 object-contain"
+                width={18}
+                height={18}
               />
             ) : (
               <div className="w-32 h-32 bg-muted rounded-lg flex items-center justify-center">
