@@ -142,12 +142,12 @@ export default function FavoritesPage() {
             <Button asChild variant="ghost">
               <Link href="/" className="flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Back to All Launches
+                <span className='max-sm:hidden'>Back to All Launches</span>
               </Link>
             </Button>
             <div className="flex items-center gap-2">
-              <Heart className="h-8 w-8 text-primary fill-current" />
-              <h1 className="text-2xl font-bold text-card-foreground">Favorite Missions</h1>
+              <Heart className="h-8 w-8 text-primary fill-current max-sm:h-4 max-sm:w-4" />
+              <h1 className="text-2xl font-bold text-card-foreground max-sm:text-sm">Favorite Missions</h1>
             </div>
             <div className="flex items-center gap-4">
               <ThemeToggle />
