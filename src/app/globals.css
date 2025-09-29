@@ -152,3 +152,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add success variant for badges */
+.badge-success {
+  background-color: #10b981; /* green-500 */
+  color: white;
+}
+
+.dark .badge-success {
+  background-color: #059669; /* green-600 */
+  color: white;
+}

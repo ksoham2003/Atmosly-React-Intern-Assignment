@@ -28,6 +28,12 @@ export default function LaunchCard({ launch, rocketName, onLaunchClick }: Launch
     return 'Upcoming';
   };
 
+  const getStatusClass = () => {
+    if (launch.success === true) return 'bg-green-500 hover:bg-green-600 text-white';
+    if (launch.success === false) return 'bg-red-500 hover:bg-red-600 text-white';
+    return '';
+  };
+
   return (
     <Card 
       className="cursor-pointer transition-all hover:shadow-md hover:scale-105"
@@ -54,7 +60,10 @@ export default function LaunchCard({ launch, rocketName, onLaunchClick }: Launch
       <CardContent>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Badge variant={getStatusVariant()}>
+            <Badge 
+              variant={getStatusVariant()}
+              className={getStatusClass()}
+            >
               {getStatusText()}
             </Badge>
             <span className="text-sm text-muted-foreground">{launchDate}</span>

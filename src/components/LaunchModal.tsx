@@ -33,6 +33,12 @@ export default function LaunchModal({ launch, rocketName, isOpen, onClose }: Lau
     return 'Upcoming';
   };
 
+  const getStatusClass = () => {
+    if (launch.success === true) return 'bg-green-500 hover:bg-green-600 text-white';
+    if (launch.success === false) return 'bg-red-500 hover:bg-red-600 text-white';
+    return '';
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto px-10">
@@ -82,7 +88,10 @@ export default function LaunchModal({ launch, rocketName, isOpen, onClose }: Lau
 
               <div>
                 <h4 className="text-sm font-medium text-muted-foreground">Status</h4>
-                <Badge variant={getStatusVariant()} className="text-sm">
+                <Badge 
+                  variant={getStatusVariant()}
+                  className={getStatusClass()}
+                >
                   {getStatusText()}
                 </Badge>
               </div>
