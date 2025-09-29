@@ -49,10 +49,55 @@ A modern, responsive React web application for exploring SpaceX launches and mis
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+  
+- Node.js 22  
 - npm or yarn  
 
 ### Installation
 ```bash
 git clone https://github.com/your-username/spacex-mission-explorer.git
 cd spacex-mission-explorer
+```
+---
+
+### Deployment
+Deploy to Vercel: [https://atmosly-react-intern-assignment.vercel.app/](https://atmosly-react-intern-assignment.vercel.app/)
+
+---
+
+### Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+### Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+---
+
+Open your browser and navigate to:
+👉 [http://localhost:3000](http://localhost:3000)
+
+---
+
+### 🧪 Testing
+
+## Run all tests:
+```bash
+npm test
+```
+
+## Run tests in watch mode:
+```bash
+npm run test:watch
+```
+
+##Generate coverage report:
+```bash
+npm run test:coverage
+```
