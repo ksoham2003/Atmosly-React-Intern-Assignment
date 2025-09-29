@@ -50,7 +50,7 @@ A modern, responsive React web application for exploring SpaceX launches and mis
 
 ### Prerequisites
 - Node.js 22  
-- npm or yarn  
+- npm 
 
 ### Installation
 ```bash
@@ -67,15 +67,11 @@ Deploy to Vercel: [https://atmosly-react-intern-assignment.vercel.app/](https://
 ### Install dependencies:
 ```bash
 npm install
-# or
-yarn install
 ```
 
 ### Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 ---
@@ -97,7 +93,7 @@ npm test
 npm run test:watch
 ```
 
-##Generate coverage report:
+## Generate coverage report:
 ```bash
 npm run test:coverage
 ```
