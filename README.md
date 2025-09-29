@@ -74,26 +74,24 @@ npm install
 npm run dev
 ```
 
----
-
 Open your browser and navigate to:
 👉 [http://localhost:3000](http://localhost:3000)
 
 ---
 
-### 🧪 Testing
+## 🧪 Testing
 
-## Run all tests:
+### Run all tests:
 ```bash
 npm test
 ```
 
-## Run tests in watch mode:
+### Run tests in watch mode:
 ```bash
 npm run test:watch
 ```
 
-## Generate coverage report:
+### Generate coverage report:
 ```bash
 npm run test:coverage
 ```
