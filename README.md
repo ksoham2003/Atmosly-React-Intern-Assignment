@@ -96,4 +96,7 @@ npm run test:watch
 npm run test:coverage
 ```
 
-🎥 Check out the **Project Walkthrough Video** here: [Watch Presentation](https://www.loom.com/share/a450016d0a9447f8a56ac0977ad03c8a?sid=e6ee0e3c-98d8-4a6c-841d-5fea31892224)  
+---
+
+### 🎥 Check out the **Project Walkthrough Video** 
+here: [Watch Presentation](https://www.loom.com/share/a450016d0a9447f8a56ac0977ad03c8a?sid=e6ee0e3c-98d8-4a6c-841d-5fea31892224)  
